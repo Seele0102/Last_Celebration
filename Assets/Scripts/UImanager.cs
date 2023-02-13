@@ -66,4 +66,10 @@ public class UImanager : MonoBehaviour
             Application.Quit();
         #endif
     }
+
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene("StartGame");
+    }
+
 }
