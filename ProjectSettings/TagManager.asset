@@ -9,6 +9,8 @@ TagManager:
   - Direction
   - Enemy
   - Range
+  - RoomTrigger
+  - Door
   layers:
   - Default
   - TransparentFX
