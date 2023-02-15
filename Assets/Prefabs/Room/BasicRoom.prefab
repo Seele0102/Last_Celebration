@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 2410638108839722533}
   - component: {fileID: 4524168969686487657}
   - component: {fileID: 3782544436949904662}
+  - component: {fileID: 2859940304224321742}
   m_Layer: 6
   m_Name: RoomArea
   m_TagString: RoomTrigger
@@ -576,8 +577,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914b27f8f4980c7459e45d61da3aab14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HaveEnterd: 0
+  Clear: 0
   Doors: []
+--- !u!114 &2859940304224321742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4193129515841357221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734f4b483977cf74ba5dc266b81c5288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DC: {fileID: 0}
 --- !u!1 &4265699769043580097
 GameObject:
   m_ObjectHideFlags: 0

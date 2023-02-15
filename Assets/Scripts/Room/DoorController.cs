@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    public EnemyCreate EC;
     public bool HaveEnterd=false;
     public bool Clear=false;
     private bool Search = false;
