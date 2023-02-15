@@ -9,8 +9,14 @@ public class DoorController : MonoBehaviour
     public bool HaveEnterd=false;
     public bool Clear=false;
     private bool Search = false;
+    public Enemy[] Enemies; 
     public GameObject[] Doors;
     private float timer=0;
+
+    private void Start()
+    {
+        EC= gameObject.GetComponent<EnemyCreate>();
+    }
     private void Update()
     {
         if(timer<=1)

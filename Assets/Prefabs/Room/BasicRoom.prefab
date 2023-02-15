@@ -184,6 +184,7 @@ Transform:
   - {fileID: 5921191892016059171}
   - {fileID: 3374320536562791953}
   - {fileID: 6848015867548899733}
+  - {fileID: 5292913133749672842}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -375,7 +376,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2150262159131709664}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -486,7 +487,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820258769706475236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -516,7 +517,7 @@ GameObject:
   - component: {fileID: 2410638108839722533}
   - component: {fileID: 4524168969686487657}
   - component: {fileID: 3782544436949904662}
-  - component: {fileID: 2859940304224321742}
+  - component: {fileID: 8947327411926350674}
   m_Layer: 6
   m_Name: RoomArea
   m_TagString: RoomTrigger
@@ -577,9 +578,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914b27f8f4980c7459e45d61da3aab14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EC: {fileID: 0}
+  HaveEnterd: 0
   Clear: 0
+  Enemies: []
   Doors: []
---- !u!114 &2859940304224321742
+--- !u!114 &8947327411926350674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2740,7 +2744,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4583515954334241637}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2759,6 +2763,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06127052, y: 1.4632376}
   m_EdgeRadius: 0
+--- !u!1 &5493520272575802338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5292913133749672842}
+  m_Layer: 0
+  m_Name: EnemyParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5292913133749672842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493520272575802338}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4818822536093647231}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8199523027725346240
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,7 +2966,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8277817356737557084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

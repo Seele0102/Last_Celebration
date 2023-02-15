@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyCreate : MonoBehaviour
 {
+
     public DoorController DC;
     private void Start()
     {
