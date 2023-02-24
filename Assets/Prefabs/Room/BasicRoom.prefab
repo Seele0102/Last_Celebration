@@ -294,7 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5040996529596017118}
   - component: {fileID: 242312919952710474}
-  - component: {fileID: 4858763196919325949}
+  - component: {fileID: 6702498724684732127}
   m_Layer: 0
   m_Name: Door_D
   m_TagString: Door
@@ -369,20 +369,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4858763196919325949
+--- !u!61 &6702498724684732127
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2150262159131709664}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.21210584}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -393,7 +393,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.4319293}
+  m_Size: {x: 1.5, y: 0.90625}
   m_EdgeRadius: 0
 --- !u!1 &2820258769706475236
 GameObject:
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3374320536562791953}
   - component: {fileID: 6280860320211403472}
-  - component: {fileID: 4739170682859380597}
+  - component: {fileID: 1346579276333433590}
   m_Layer: 0
   m_Name: Door_L
   m_TagString: Door
@@ -480,20 +480,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4739170682859380597
+--- !u!61 &1346579276333433590
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2820258769706475236}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017716762, y: -0.013880968}
+  m_Offset: {x: -0.06, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -504,7 +504,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.042926528, y: 1.5347381}
+  m_Size: {x: 0.3, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &4193129515841357221
 GameObject:
@@ -586,7 +586,7 @@ MonoBehaviour:
   Enemy_SP_3: {fileID: 0}
   Enemy_SP_4: {fileID: 0}
   EnemyCreateCenter: {fileID: 5493520272575802338}
-  EnemyNum: 
+  EnemyNum: 0
   HaveEnterd: 0
   Clear: 0
   Doors: []
@@ -2656,7 +2656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6848015867548899733}
   - component: {fileID: 5899008392292154117}
-  - component: {fileID: 2570442665421004067}
+  - component: {fileID: 3880462761061682423}
   m_Layer: 0
   m_Name: Door_R
   m_TagString: Door
@@ -2731,20 +2731,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2570442665421004067
+--- !u!61 &3880462761061682423
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4583515954334241637}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011254773, y: -0.000000059604645}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2755,7 +2755,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.06127052, y: 1.4632376}
+  m_Size: {x: 0.3, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &5493520272575802338
 GameObject:
@@ -2878,7 +2878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5921191892016059171}
   - component: {fileID: 2100236510612340048}
-  - component: {fileID: 5030885850206962061}
+  - component: {fileID: 2145700001692140062}
   m_Layer: 0
   m_Name: Door_U
   m_TagString: Door
@@ -2953,20 +2953,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5030885850206962061
+--- !u!61 &2145700001692140062
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8277817356737557084}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2855257}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2977,5 +2977,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.33519858}
+  m_Size: {x: 1.5, y: 0.90625}
   m_EdgeRadius: 0

@@ -29,10 +29,10 @@ public class DoorController : MonoBehaviour
         }
         if(Input.GetKeyUp(KeyCode.Space)) 
         {
-            Clear= true;
             foreach(var Door in Doors)
             {
-                Door.GetComponent<BoxCollider2D>().enabled= false;
+                Clear=!Clear;
+                Door.GetComponent<BoxCollider2D>().enabled= Clear;
             }
         }
     }
