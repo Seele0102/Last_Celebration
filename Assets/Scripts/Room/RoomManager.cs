@@ -36,7 +36,7 @@ public class RoomManager : MonoBehaviour
         {
             timer-=Time.deltaTime;
         }
-        if (EnemyNum ==0) 
+        if (Input.GetKeyDown(KeyCode.Q)) 
         {
             Clear= true;
             foreach(var Door in Doors)
