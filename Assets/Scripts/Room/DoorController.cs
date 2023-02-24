@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public EnemyCreate EC;
     public bool HaveEnterd=false;
     public bool Clear=false;
     private bool Search = false;
@@ -15,7 +14,7 @@ public class DoorController : MonoBehaviour
 
     private void Start()
     {
-        EC= gameObject.GetComponent<EnemyCreate>();
+
     }
     private void Update()
     {

@@ -517,7 +517,6 @@ GameObject:
   - component: {fileID: 2410638108839722533}
   - component: {fileID: 4524168969686487657}
   - component: {fileID: 3782544436949904662}
-  - component: {fileID: 8947327411926350674}
   m_Layer: 6
   m_Name: RoomArea
   m_TagString: RoomTrigger
@@ -553,7 +552,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059149742, y: -0.18961954}
+  m_Offset: {x: 0.059149742, y: -0.24231577}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -564,7 +563,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.167093, y: 9.433404}
+  m_Size: {x: 17.167093, y: 9.3280115}
   m_EdgeRadius: 0
 --- !u!114 &3782544436949904662
 MonoBehaviour:
@@ -578,24 +577,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914b27f8f4980c7459e45d61da3aab14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EC: {fileID: 0}
+  Enemy_1: {fileID: 2557159669301951975, guid: 98ffbcba7aa47e14eaaaadb6bd1d0f57, type: 3}
+  Enemy_2: {fileID: 0}
+  Enemy_3: {fileID: 0}
+  Enemy_4: {fileID: 0}
+  Enemy_SP_1: {fileID: 0}
+  Enemy_SP_2: {fileID: 0}
+  Enemy_SP_3: {fileID: 0}
+  Enemy_SP_4: {fileID: 0}
+  EnemyCreateCenter: {fileID: 5493520272575802338}
+  EnemyNum: 
   HaveEnterd: 0
   Clear: 0
-  Enemies: []
   Doors: []
---- !u!114 &8947327411926350674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193129515841357221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734f4b483977cf74ba5dc266b81c5288, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DC: {fileID: 0}
 --- !u!1 &4265699769043580097
 GameObject:
   m_ObjectHideFlags: 0
