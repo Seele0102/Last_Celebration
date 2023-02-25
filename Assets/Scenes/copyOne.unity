@@ -1791,6 +1791,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   player: {fileID: 1702874862}
+  Def: 0
+  Att: 0
+  Health: 0
 --- !u!95 &1702874866
 Animator:
   serializedVersion: 4
