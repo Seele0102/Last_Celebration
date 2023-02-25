@@ -5,8 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private GameObject Player;
-    public float Health;
-    public float MoveSpeed;
+    public float Health,Attack,Defence,MoveSpeed;
     public Vector3 p;
     public bool AttackAllow=true;
     private Quaternion Turn;
@@ -14,6 +13,8 @@ public class Enemy : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         Health = 100f;
+        Attack = 10;
+        Defence = 10;
     }
     private void Update()
     {
@@ -23,10 +24,21 @@ public class Enemy : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.K))
         {
-            Health -= 10f;
+            Health -= 100;
         }
-        p = Player.transform.position - gameObject.transform.position;
-        p=p.normalized;
+        MoveLogic();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.CompareTag("Player"))
+        {
+            AttackAllow = false;
+        }
+    }
+    private void MoveLogic()
+    {
+        p = gameObject.transform.position - Player.transform.position;
+        p = p.normalized;
         if (!AttackAllow)
         {
             p = -p;
@@ -42,9 +54,5 @@ public class Enemy : MonoBehaviour
             gameObject.transform.rotation = Turn;
         }
         gameObject.transform.position += MoveSpeed * Time.deltaTime * p;
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            AttackAllow=!AttackAllow;
-        }
     }
 }
