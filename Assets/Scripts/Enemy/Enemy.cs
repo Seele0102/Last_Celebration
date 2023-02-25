@@ -30,16 +30,16 @@ public class Enemy : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.CompareTag("Player"))
+        if(collision.transform==Player)
         {
             AttackAllow = false;
         }
     }
     private void MoveLogic()
     {
-        p = gameObject.transform.position - Player.transform.position;
+        p = Player.transform.position - gameObject.transform.position;
         p = p.normalized;
-        if (!AttackAllow)
+        if (AttackAllow)
         {
             p = -p;
         }
