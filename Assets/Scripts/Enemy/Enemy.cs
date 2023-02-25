@@ -12,9 +12,9 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-        Health = 100f;
-        Attack = 10;
-        Defence = 10;
+        Health = 100*GameManager.HealthRise;
+        Attack = 10*GameManager.AttRise;
+        Defence = 10*GameManager.DefRise;
     }
     private void Update()
     {
@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform==Player)
+        if(collision.transform.CompareTag("Player"))
         {
             AttackAllow = false;
         }

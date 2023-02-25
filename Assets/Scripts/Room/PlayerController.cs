@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject player;
 
-
+    public float Def, Att, Health;
 
     private void Start()
     {
