@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
+    public GameObject player;
+
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,4 +44,37 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetFloat("speed",movement.magnitude);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        StartCoroutine(PlayEffect());
+        SavePos(0, 2, 0);
+    }
+
+    IEnumerator PlayEffect()
+    {
+        yield return new WaitForSeconds(2.0f);
+        Application.LoadLevel("copyOne");
+        DontDestroyOnLoad(player);
+    }
+
+    void SavePos(float posX,float posY,float posZ)
+    {
+        PlayerPrefs.SetFloat("PosX",posX);
+        PlayerPrefs.SetFloat("PosY", posY);
+        PlayerPrefs.SetFloat("PosZ", posZ);
+    }
+
+    void LoadPos()
+    {
+        float x = PlayerPrefs.GetFloat("PosX");
+        float y = PlayerPrefs.GetFloat("PosY");
+        float z = PlayerPrefs.GetFloat("PosZ");
+        transform.localPosition = new Vector3((float)x, (float)y, (float)z);
+    }
+
+
+
+
+
 }
