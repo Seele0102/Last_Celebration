@@ -13,6 +13,7 @@ public class Enemy_3 : MonoBehaviour
     private float AttackTimer;
     private void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         AttackTimer = 5;
     }
     private void Update()
