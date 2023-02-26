@@ -53,7 +53,7 @@ public class UImanager : MonoBehaviour
         exitAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
     }
 
-    void GameOver()
+    public  void GameOver()
     {
         AudioManager.Instance.PlayMusic(gameMusic, 0.5f);
         gameoverMenuUI.SetActive(true);

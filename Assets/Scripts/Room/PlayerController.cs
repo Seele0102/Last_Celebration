@@ -18,12 +18,16 @@ public class PlayerController : MonoBehaviour
     public float Def, Att, Health;
     public GameObject Bullet;
     public float timer,timer_2,timer_3;
+    public GameObject UIM;
+    public UImanager UI;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         timer =timer_2=timer_3= 0;
         Health = 100;
+        UIM = GameObject.Find("UIManager");
+        UI = UIM.GetComponent<UImanager>();
     }
 
     private void Update()
@@ -52,7 +56,7 @@ public class PlayerController : MonoBehaviour
         Attack();
         if(Health<=0)
         {
-            Destroy(gameObject);
+            UI.GameOver();   
         }
     }
 
