@@ -17,12 +17,12 @@ public class PlayerController : MonoBehaviour
 
     public float Def, Att, Health;
     public GameObject Bullet;
-    public float timer,timer_2;
+    public float timer,timer_2,timer_3;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        timer =timer_2= 0;
+        timer =timer_2=timer_3= 0;
         Health = 100;
     }
 
@@ -44,6 +44,10 @@ public class PlayerController : MonoBehaviour
         if(timer_2>0)
         {
             timer_2-= Time.deltaTime;
+        }
+        if(timer_3>0)
+        {
+            timer_3-= Time.deltaTime;
         }
         Attack();
         if(Health<=0)
@@ -104,6 +108,15 @@ public class PlayerController : MonoBehaviour
             GameObject.Instantiate(Bullet);
             timer = 0.5f;
             AudioManager.Instance.PlaySound2D("ShootSound");
+        }
+        if(Input.GetKeyDown(KeyCode.L)&&timer_3<=0)
+        {
+            for(int i = 0; i <= 5; i++) 
+            {
+                GameObject.Instantiate(Bullet);
+                AudioManager.Instance.PlaySound2D("ShootSound");
+            }
+            timer_3 = 2;
         }
     }
 }

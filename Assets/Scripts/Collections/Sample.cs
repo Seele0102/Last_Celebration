@@ -11,7 +11,7 @@ public class Sample : MonoBehaviour
     {
         if(collision.transform.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
             collision.gameObject.GetComponent<PlayerController>().Health = 100;
             GameManager.Att += 0.2f;
         }
