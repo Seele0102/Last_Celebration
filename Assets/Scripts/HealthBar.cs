@@ -10,12 +10,17 @@ public class HealthBar : MonoBehaviour
     public float hp;
     [SerializeField] private float maxHp;
     [SerializeField] private float hurtSpeed=0.005f;
+    public GameObject Player;
+    public PlayerController PVC;
     private void Start()
     {
-        hp=maxHp;
+        Player = GameObject.FindGameObjectWithTag("Player");
+        PVC= Player.GetComponent<PlayerController>();
+        maxHp=100;
     }
     private void Update()
     {
+        hp=PVC.Health;
         hpImage.fillAmount = hp/maxHp ;
         if(hpEffectImage.fillAmount > hpImage.fillAmount)
         {
