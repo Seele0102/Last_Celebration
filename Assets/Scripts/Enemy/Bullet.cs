@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        gameObject.transform.position -= Dircetion*Time.deltaTime*9;
+        gameObject.transform.position -= Dircetion*Time.deltaTime*10;
         if(timer>=4)
         {
             Destroy(gameObject);
