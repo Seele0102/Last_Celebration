@@ -578,18 +578,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy_1: {fileID: 2557159669301951975, guid: 98ffbcba7aa47e14eaaaadb6bd1d0f57, type: 3}
-  Enemy_2: {fileID: 0}
-  Enemy_3: {fileID: 0}
-  Enemy_4: {fileID: 0}
-  Enemy_SP_1: {fileID: 0}
-  Enemy_SP_2: {fileID: 0}
-  Enemy_SP_3: {fileID: 0}
-  Enemy_SP_4: {fileID: 0}
+  Enemy_2: {fileID: 8409839741066130744, guid: c74e9dcf6bb492b48a1c49909c53fae7, type: 3}
+  Enemy_3: {fileID: 2472923782551827851, guid: 246df3e1727c20745bfbbc7975437289, type: 3}
+  Enemy_4: {fileID: 5966827560882315853, guid: 5d3683ce79dbc5d4294b27f15af472dc, type: 3}
+  Enemy_SP: {fileID: 0}
   EnemyCreateCenter: {fileID: 5493520272575802338}
   EnemyNum: 0
+  EnemyNum_2: 0
+  EnemyNum_3: 0
+  EnemyNum_4: 0
   HaveEnterd: 0
   Clear: 0
   Doors: []
+  Box: {fileID: 7766894687581947498, guid: 77b3414c12c82334491a829145197fca, type: 3}
+  X_Box: {fileID: 0}
 --- !u!1 &4265699769043580097
 GameObject:
   m_ObjectHideFlags: 0
