@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour
 
     public float Def, Att, Health;
     public GameObject Bullet;
-    public float timer;
+    public float timer,timer_2;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        timer = 0;
+        timer =timer_2= 0;
+        Health = 100;
     }
 
     private void Update()
@@ -41,7 +42,15 @@ public class PlayerController : MonoBehaviour
         {
             timer-= Time.deltaTime;
         }
+        if(timer_2>0)
+        {
+            timer_2-= Time.deltaTime;
+        }
         Attack();
+        if(Health<=0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -81,7 +90,14 @@ public class PlayerController : MonoBehaviour
         float z = PlayerPrefs.GetFloat("PosZ");
         transform.localPosition = new Vector3((float)x, (float)y, (float)z);
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.CompareTag("Enemy"))
+        {
+            Health -= 10;
+            timer_2 = 1;
+        }
+    }
     private void Attack()
     {
         if(Input.GetKeyDown(KeyCode.J)&&timer<=0)

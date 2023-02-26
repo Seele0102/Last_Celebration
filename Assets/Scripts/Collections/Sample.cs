@@ -1,12 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Sample : MonoBehaviour
 {
     public bool isGet = false;
-    private void Update()
+    public int number = 0;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.transform.CompareTag("Box"))
+        {
+            Destroy(collision.gameObject);
+            number = Random.Range(0, 10000);
+            number %= 67;
+            switch (number)
+            {
+                case 0:Collection_Player_HpRise1();break;
+                case 1:Collection_Player_HpRise2();break;
+                case 2:Collection_Player_HpRise3();break;
+            }
+        }
     }
     //我方生命力相关
     //HP增加10%
