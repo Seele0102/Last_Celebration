@@ -55,6 +55,9 @@ TagManager:
   - name: Door
     uniqueID: 4251249389
     locked: 0
+  - name: Shadow
+    uniqueID: 561354507
+    locked: 0
   - name: Player
     uniqueID: 1481497305
     locked: 0
