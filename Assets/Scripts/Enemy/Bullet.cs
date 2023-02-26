@@ -8,11 +8,14 @@ public class Bullet : MonoBehaviour
     public GameObject ShootCenter;
     public Vector3 Dircetion;
     private float timer;
+    private SpriteRenderer SR;
+    private Color originalColor;
+
     private void Awake()
     {
         ShootCenter = GameObject.FindGameObjectWithTag("ShootCenter");
         gameObject.transform.parent = ShootCenter.transform;
-        gameObject.transform.localPosition = Vector3.zero;
+        gameObject.transform.localPosition = Vector3.zero; 
     }
     private void Start()
     {
@@ -33,15 +36,28 @@ public class Bullet : MonoBehaviour
     {
         if(collision.transform.CompareTag("Enemy"))
         {
-            if(collision.GetComponent<Enemy>() != null)
+            SR = collision.GetComponent<SpriteRenderer>();
+                originalColor = SR.color;
+                FlashColor(0.1f);
+            if (collision.GetComponent<Enemy>() != null)
             {
-                collision.GetComponent<Enemy>().Health -= 1000;
+                collision.GetComponent<Enemy>().Health -= 100;
             }
             else if(collision.GetComponent<Enemy_2>() != null) 
             { 
-                collision.GetComponent <Enemy_2>().Health -= 500;
+                collision.GetComponent <Enemy_2>().Health -= 100;
             }
             Destroy(gameObject);
         }
+    }
+    public void FlashColor(float time)
+    {
+        SR.color = Color.red;
+        Invoke("ResetColor", time);
+    }
+
+    public void ResetColor()
+    {
+        SR.color = originalColor;
     }
 }
