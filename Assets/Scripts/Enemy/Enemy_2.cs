@@ -9,6 +9,7 @@ public class Enemy_2 : MonoBehaviour
     public float Health, Attack, Defence,Speed,MaxHealth;
     private bool HaveSkill;
     private float AttackCD;
+    private Quaternion Turn;
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -16,7 +17,6 @@ public class Enemy_2 : MonoBehaviour
         Attack = 5 * GameManager.AttRise;
         Defence = 50 * GameManager.DefRise;
         HaveSkill= false;
-        PC=Player.GetComponent<PlayerController>();
     }
     private void Update()
     {
@@ -35,7 +35,17 @@ public class Enemy_2 : MonoBehaviour
     }
     private void MoveLogic()
     {
-        gameObject.transform.position += Direction*Speed;
+        gameObject.transform.position -= Direction*Speed*Time.deltaTime;
+        if (Direction.x > 0)
+        {
+            Turn.SetFromToRotation(new Vector3(1, 0, 0), new Vector3(-1, 0, 0));
+            gameObject.transform.rotation = Turn;
+        }
+        else if (Direction.x < 0)
+        {
+            Turn.SetFromToRotation(new Vector3(1, 0, 0), new Vector3(1, 0, 0));
+            gameObject.transform.rotation = Turn;
+        }
     }
     private void Skill()
     {

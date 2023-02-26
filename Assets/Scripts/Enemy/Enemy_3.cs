@@ -11,6 +11,7 @@ public class Enemy_3 : MonoBehaviour
     public Vector3 Direction;
     public float Speed, Health, Attack, Defence;
     private float AttackTimer;
+    private Quaternion Turn;
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -42,7 +43,17 @@ public class Enemy_3 : MonoBehaviour
     }
     private void Move()
     {
-        if(Distance<=2)
+        if (Direction.x > 0)
+        {
+            Turn.SetFromToRotation(new Vector3(1, 0, 0), new Vector3(-1, 0, 0));
+            gameObject.transform.rotation = Turn;
+        }
+        else if (Direction.x < 0)
+        {
+            Turn.SetFromToRotation(new Vector3(1, 0, 0), new Vector3(1, 0, 0));
+            gameObject.transform.rotation = Turn;
+        }
+        if (Distance<=2)
         {
             gameObject.transform.position -= Speed * Time.deltaTime * Direction;
         }
