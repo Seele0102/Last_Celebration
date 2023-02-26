@@ -28,7 +28,11 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        MoveLogic();
+        if(Time.timeScale == 1)
+        {
+      MoveLogic();
+        }
+  
         if (SR.color == Color.red && !Att)
         {
             Att = true;

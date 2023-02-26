@@ -24,7 +24,9 @@ public class Bullet : MonoBehaviour
     }
     private void Update()
     {
-        if(Enemy==null)
+        if(Time.timeScale ==1)
+        {
+if (Enemy==null)
         {
             Destroy(gameObject);
         }
@@ -34,6 +36,8 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -29,7 +29,11 @@ public class Enemy_2 : MonoBehaviour
     {
         Direction=gameObject.transform.position-Player.transform.position;
         Direction = Direction.normalized;
+        if(Time.timeScale ==1)
+        {
         MoveLogic();
+        }
+
         Skill();
         if(Health<=0)
         {
