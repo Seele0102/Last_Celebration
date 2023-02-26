@@ -9,17 +9,11 @@ public class Sample : MonoBehaviour
     public int number = 0;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.CompareTag("Box"))
+        if(collision.transform.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
-            number = Random.Range(0, 10000);
-            number %= 67;
-            switch (number)
-            {
-                case 0:Collection_Player_HpRise1();break;
-                case 1:Collection_Player_HpRise2();break;
-                case 2:Collection_Player_HpRise3();break;
-            }
+            Destroy(gameObject);
+            collision.gameObject.GetComponent<PlayerController>().Health = 100;
+            GameManager.Att += 0.2f;
         }
     }
     //我方生命力相关

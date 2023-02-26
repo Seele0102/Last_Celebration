@@ -12,6 +12,7 @@ TagManager:
   - RoomTrigger
   - Door
   - ShootCenter
+  - Bar
   layers:
   - Default
   - TransparentFX

@@ -14,8 +14,7 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         ShootCenter = GameObject.FindGameObjectWithTag("ShootCenter");
-        gameObject.transform.parent = ShootCenter.transform;
-        gameObject.transform.localPosition = Vector3.zero; 
+        gameObject.transform.position = ShootCenter.transform.position; 
     }
     private void Start()
     {
@@ -25,12 +24,20 @@ public class Bullet : MonoBehaviour
     }
     private void Update()
     {
+        if(Time.timeScale ==1)
+        {
+if (Enemy==null)
+        {
+            Destroy(gameObject);
+        }
         timer += Time.deltaTime;
         gameObject.transform.position -= Dircetion*Time.deltaTime*9;
         if(timer>=4)
         {
             Destroy(gameObject);
         }
+        }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -40,12 +47,12 @@ public class Bullet : MonoBehaviour
             originalColor= SR.color;
             if (collision.GetComponent<Enemy>() != null)
             {
-                collision.GetComponent<Enemy>().Health -= 100;
+                collision.GetComponent<Enemy>().Health -= 50 * GameManager.Att;
                 FlashColor(0.1f);
             }
             else if(collision.GetComponent<Enemy_2>() != null) 
             { 
-                collision.GetComponent <Enemy_2>().Health -= 100;
+                collision.GetComponent <Enemy_2>().Health -= 50 * GameManager.Att;
                 FlashColor(0.1f);
             }
             Destroy(gameObject);
