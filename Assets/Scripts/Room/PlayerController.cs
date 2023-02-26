@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     public float Def, Att, Health;
     public GameObject Bullet;
     public float timer,timer_2;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -104,6 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject.Instantiate(Bullet);
             timer = 0.5f;
+            AudioManager.Instance.PlaySound2D("ShootSound");
         }
     }
 }

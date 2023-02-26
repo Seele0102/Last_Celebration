@@ -37,15 +37,16 @@ public class Bullet : MonoBehaviour
         if(collision.transform.CompareTag("Enemy"))
         {
             SR = collision.GetComponent<SpriteRenderer>();
-                originalColor = SR.color;
-                FlashColor(0.1f);
+            originalColor= SR.color;
             if (collision.GetComponent<Enemy>() != null)
             {
                 collision.GetComponent<Enemy>().Health -= 100;
+                FlashColor(0.1f);
             }
             else if(collision.GetComponent<Enemy_2>() != null) 
             { 
                 collision.GetComponent <Enemy_2>().Health -= 100;
+                FlashColor(0.1f);
             }
             Destroy(gameObject);
         }

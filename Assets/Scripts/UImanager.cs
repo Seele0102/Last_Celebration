@@ -16,7 +16,7 @@ public class UImanager : MonoBehaviour
     public float upSpeed;
     public float faderSpeed;
     public float lifeTimer;
-
+    public AudioClip gameMusic;
     
     private void Update()
     {
@@ -33,6 +33,11 @@ public class UImanager : MonoBehaviour
             Debug.Log("°´f");
             Pause();
         }
+    }
+
+    private void Start()
+    {
+        AudioManager.Instance.PlayMusic(gameMusic, 0.5f);
     }
 
     public void Resume()

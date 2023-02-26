@@ -3580,6 +3580,7 @@ MonoBehaviour:
   - {fileID: 2126727752}
   - {fileID: 620227778}
   - {fileID: 1695267244}
+  startGameMusic: {fileID: 8300000, guid: 4767ee69a77bda5468ed726efc8b8ef2, type: 3}
 --- !u!4 &1115880891
 Transform:
   m_ObjectHideFlags: 0
