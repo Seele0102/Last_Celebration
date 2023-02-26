@@ -8,7 +8,6 @@ public class Enemy_2 : MonoBehaviour
     private Vector3 Direction;
     public float Health, Attack, Defence,Speed,MaxHealth;
     private bool HaveSkill;
-    private PlayerController PC;
     private float AttackCD;
     private void Start()
     {
@@ -44,21 +43,6 @@ public class Enemy_2 : MonoBehaviour
         {
             HaveSkill= true;
             Health = MaxHealth * 0.75f;
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.transform.CompareTag("Player")&&AttackCD<0)
-        {
-            if((AttackCD-PC.Def)>=Attack*0.05f)
-            {
-                PC.Health -= (Attack - PC.Def);
-            }
-            else
-            {
-                PC.Health -= Attack * 0.05f;
-            }
-            AttackCD = 2;
         }
     }
 }
