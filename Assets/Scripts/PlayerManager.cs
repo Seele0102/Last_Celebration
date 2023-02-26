@@ -11,13 +11,13 @@ public class PlayerInfo/*角色信息*/
     public bool isHead, isTired, isTiring;//判断现阶段状态
     public int level;//等级
     public float experence;//经验值
-    public float health, healthMax, healthDropRelief;//生命，最大生命，伤害减免
+    public static float health, healthMax, healthDropRelief;//生命，最大生命，伤害减免
     public float san, sanMax, sanMaxDrop, sanRise, sanMaxDropTime;//san，最大san，最大san下降
-    public float relief;//闪避
-    public float defense;//防御
-    public float attack, attackStrengthDrop, attackHit;//攻击力，攻击所需体力,攻击击退力度
-    public float speed;//移动速度
-    public float sprintLength, sprintStrengthDrop, sprint, sprintMax;//冲刺距离，冲刺所需体力
+    public static float relief;//闪避
+    public static float defense;//防御
+    public static float attack, attackStrengthDrop, attackHit;//攻击力，攻击所需体力,攻击击退力度
+    public static float speed;//移动速度
+    public static float sprintLength, sprintStrengthDrop, sprint, sprintMax;//冲刺距离，冲刺所需体力
     public float strength, strengthMax, strengthDrop, strengthRise;//体力，最大体力，跑动所需体力，静止走动回复
     public float shoot, shootMax;
 }
@@ -61,7 +61,7 @@ public class PlayerManager : MonoBehaviour
     //开始重置
     void Start()
     {
-        GameStart(playerinfo);
+        //GameStart(playerinfo);
         PlayerHead = GameObject.FindGameObjectWithTag("PlayerHead");
         HeadRB = PlayerHead.GetComponent<Rigidbody2D>();
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -116,18 +116,18 @@ public class PlayerManager : MonoBehaviour
         Vector2 input = (transform.right * H + transform.up * V).normalized;
         if (Input.GetKey(KeyCode.L))
         {
-            playerinfo.speed = 0.004f;
-            playerinfo.sprintLength = 5;
+            PlayerInfo.speed = 0.004f;
+            PlayerInfo.sprintLength = 5;
         }
         else
         {
-            playerinfo.speed = 0.002f;
-            playerinfo.sprintLength = 2.5f;
+            PlayerInfo.speed = 0.002f;
+            PlayerInfo.sprintLength = 2.5f;
         }
         if (H != 0 || V != 0)
         {
-            move.x = H * playerinfo.speed;
-            move.y = V * playerinfo.speed;
+            move.x = H * PlayerInfo.speed;
+            move.y = V * PlayerInfo.speed;
             Player.transform.position += move;
             Angle.x = H;
             Angle.y = V;
@@ -158,8 +158,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K) && SprintTime > SprintMax)
         {
-            Derection.x = math.cos(angle) * playerinfo.sprintLength;
-            Derection.y = math.sin(angle) * playerinfo.sprintLength;
+            Derection.x = math.cos(angle) * PlayerInfo.sprintLength;
+            Derection.y = math.sin(angle) * PlayerInfo.sprintLength;
             Player.transform.position += Derection;
             SprintTime = 0;
         }
@@ -195,29 +195,29 @@ public class PlayerManager : MonoBehaviour
         {
             damage = 0;
         }
-       if(damage>playerinfo.defense&&damage-playerinfo.defense>=damage/20)
+       if(damage>PlayerInfo.defense&&damage- PlayerInfo.defense>=damage/20)
         {
-            damage -= playerinfo.defense;
+            damage -= PlayerInfo.defense;
         }
        else
         {
             damage /=20f;
         }
-        damage =damage* (100f-playerinfo.relief) / 100f;
-        playerinfo.health -= damage;
+        damage =damage* (100f- PlayerInfo.relief) / 100f;
+        PlayerInfo.health -= damage;
     }
     //准备阶段各项属性的变化
     private void Prepare()
     {
         if (playerinfo.isHead)
         {
-            playerinfo.healthMax = playerinfo.health = 1;
+            PlayerInfo.healthMax = PlayerInfo.health = 1;
             if (sanDropen < playerinfo.sanMaxDrop && playerinfo.san >= 0)
             {
                 sanDropen += (playerinfo.sanMax / playerinfo.sanMaxDropTime) * Time.deltaTime;
             }
             playerinfo.san -= sanDropen * Time.deltaTime;
-            playerinfo.speed = 5;
+            PlayerInfo.speed = 5;
         }
         else
         {
@@ -226,7 +226,7 @@ public class PlayerManager : MonoBehaviour
             {
                 playerinfo.san += playerinfo.sanRise * Time.deltaTime;
             }
-            playerinfo.speed = 10;
+            PlayerInfo.speed = 10;
         }
         if (playerinfo.shoot < playerinfo.shootMax)
         {
@@ -245,7 +245,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
     //游戏初始面板调整
-    private void GameStart(PlayerInfo p)
+    /*private void GameStart(PlayerInfo p)
     {
         p.isHead = p.isTired = p.isTiring = false;
         p.level = 1;
@@ -279,5 +279,5 @@ public class PlayerManager : MonoBehaviour
         p.sprintMax = 1;
         p.shoot = 5;
         p.shootMax = 5;
-    }
+    }*/
 }

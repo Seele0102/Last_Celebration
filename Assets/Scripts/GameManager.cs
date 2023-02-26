@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int GameLevel;
-    public static float HealthRise,DefRise,AttRise;
+    public static float HealthRise,DefRise,AttRise,SpeedRise;
     private void Start()
     {
         GameLevel = 0;
