@@ -9,8 +9,14 @@ public class Enemy : MonoBehaviour
     public Vector3 p;
     public bool AttackAllow=true;
     private Quaternion Turn;
+    private SpriteRenderer SR;
+    private Color originalColor;
+    private float timer = 0;
+    private bool Att = false;
     private void Start()
     {
+        SR = GetComponent<SpriteRenderer>();
+        originalColor = SR.color;
         Player = GameObject.FindGameObjectWithTag("Player");
         Health = 100*GameManager.HealthRise;
         Attack = 10*GameManager.AttRise;
@@ -23,6 +29,20 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
         MoveLogic();
+        if (SR.color == Color.red && !Att)
+        {
+            Att = true;
+            timer = 0.2f;
+        }
+        if (timer >= 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else if (SR.color == Color.red)
+        {
+            SR.color = originalColor;
+            Att = false;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

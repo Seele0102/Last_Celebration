@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static int GameLevel;
     public static float HealthRise=1,DefRise,AttRise,SpeedRise;
+    public static float Att = 1;
     private void Start()
     {
         HealthRise = 1;

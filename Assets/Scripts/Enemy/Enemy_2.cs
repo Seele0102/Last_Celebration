@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Enemy_2 : MonoBehaviour
@@ -10,8 +11,14 @@ public class Enemy_2 : MonoBehaviour
     private bool HaveSkill;
     private float AttackCD;
     private Quaternion Turn;
+    private SpriteRenderer SR;
+    private Color originalColor;
+    private float timer = 0;
+    private bool Att=false;
     private void Start()
     {
+        SR= GetComponent<SpriteRenderer>();
+        originalColor=SR.color;
         Player = GameObject.FindGameObjectWithTag("Player");
         Health=MaxHealth = 200*GameManager.HealthRise;
         Attack = 5 * GameManager.AttRise;
@@ -31,6 +38,20 @@ public class Enemy_2 : MonoBehaviour
         if(AttackCD>=0)
         {
             AttackCD-=Time.deltaTime;
+        }
+        if(SR.color==Color.red&&!Att)
+        {
+            Att = true;
+            timer = 0.2f;
+        }
+        if(timer>=0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else if(SR.color==Color.red)
+        {
+            SR.color = originalColor;
+            Att= false;
         }
     }
     private void MoveLogic()
