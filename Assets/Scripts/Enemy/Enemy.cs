@@ -22,6 +22,10 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            Health -= 100;
+        }
         MoveLogic();
     }
     private void OnCollisionEnter2D(Collision2D collision)

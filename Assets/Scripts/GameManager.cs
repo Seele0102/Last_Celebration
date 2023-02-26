@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int GameLevel;
-    public static float HealthRise=1,DefRise,AttRise,SpeedRise;
+    public int GameLevel;
+    public static float HealthRise,DefRise,AttRise,SpeedRise;
     private void Start()
     {
-        HealthRise = 1;
-        DefRise=1;
-        AttRise=1;
-        SpeedRise=1;
         GameLevel = 0;
     }
     private void Update()

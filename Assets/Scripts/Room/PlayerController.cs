@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -16,14 +15,11 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
 
     public float Def, Att, Health;
-    public GameObject Bullet;
-    public float timer;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        timer = 0;
     }
 
     private void Update()
@@ -37,11 +33,6 @@ public class PlayerController : MonoBehaviour
         }
 
         SwitchAnim();
-        if(timer>0)
-        {
-            timer-= Time.deltaTime;
-        }
-        Attack();
     }
 
     private void FixedUpdate()
@@ -82,12 +73,8 @@ public class PlayerController : MonoBehaviour
         transform.localPosition = new Vector3((float)x, (float)y, (float)z);
     }
 
-    private void Attack()
-    {
-        if(Input.GetKeyDown(KeyCode.J)&&timer<=0)
-        {
-            GameObject.Instantiate(Bullet);
-            timer = 0.5f;
-        }
-    }
+
+
+
+
 }
