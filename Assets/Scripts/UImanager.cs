@@ -16,18 +16,15 @@ public class UImanager : MonoBehaviour
     public float upSpeed;
     public float faderSpeed;
     public float lifeTimer;
-    public AudioClip gameMusic;
-    
+    public AudioClip gameMusic,gameoverMusic;
+    public GameObject gameoverMenuUI;
+    public Animator gameoverAnimator;
+    public Animator gameoverRestartAnimator;
+    public Animator gameoverExitAnimator;
+
+
     private void Update()
     {
-        if (PlayerManager.IsHead)
-        {
-
-        }
-        else
-        {
-
-        }
         if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("°´f");
@@ -56,11 +53,23 @@ public class UImanager : MonoBehaviour
         exitAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
     }
 
+    void GameOver()
+    {
+        AudioManager.Instance.PlayMusic(gameMusic, 0.5f);
+        gameoverMenuUI.SetActive(true);
+        Time.timeScale = 0;
+        gameoverAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        gameoverRestartAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        gameoverExitAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+    }
+
+
+
     public void Remake()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void OnExitGame()
