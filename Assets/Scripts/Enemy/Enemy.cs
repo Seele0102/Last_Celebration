@@ -9,12 +9,18 @@ public class Enemy : MonoBehaviour
     public Vector3 p;
     public bool AttackAllow=true;
     private Quaternion Turn;
+    //敌人受伤动画：在减少生命值的代码处添加FlashColor(float time)
+    private SpriteRenderer sr;
+    private Color originalColor;
+
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         Health = 100*GameManager.HealthRise;
         Attack = 10*GameManager.AttRise;
         Defence = 10*GameManager.DefRise;
+        sr = GetComponent<SpriteRenderer>();
+        originalColor = sr.color;
     }
     private void Update()
     {
@@ -51,4 +57,19 @@ public class Enemy : MonoBehaviour
         }
         gameObject.transform.position += MoveSpeed * Time.deltaTime * p;
     }
+
+    void FlashColor(float time)
+    {
+        sr.color = Color.red;
+        Invoke("ResetColor", time);     
+    }
+
+    void ResetColor()
+    {
+        sr.color = originalColor;
+    }
+
+
+
+
 }
