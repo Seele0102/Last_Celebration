@@ -19,6 +19,9 @@ public class MenuManager : MonoBehaviour
 
     public Slider[] volumeSlider;
 
+    public AudioClip startGameMusic;
+
+
     private void Start()
     {
         volumeSlider[0].value = AudioManager.Instance.masterVolumePercent;
@@ -30,6 +33,8 @@ public class MenuManager : MonoBehaviour
         }
         bool isFullscreen = (PlayerPrefs.GetInt("fullscreen")==1)?true:false;
         fullscreenToggle.isOn = isFullscreen;
+
+        AudioManager.Instance.PlayMusic(startGameMusic, 0.5f);
     }
 
     //开始按钮,出现开始游戏和继续游戏
